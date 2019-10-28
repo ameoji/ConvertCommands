@@ -59,6 +59,8 @@ namespace ConvertCommands
 
             foreach (var strPart in arrConvert)
             {
+                string outputString = strPart;
+
                 if (strPart == "")
                 {
                     continue;
@@ -66,17 +68,15 @@ namespace ConvertCommands
 
                 if (strFront != "" && strPart.Contains(strPart))
                 {
-                    strPart.Replace(strFront, "");
-
+                    outputString = outputString.Replace(strFront, "");
                 }
 
                 if (strBack != "" && strPart.Contains(strBack))
                 {
-                    strPart.Replace(strBack, "");
-
+                    outputString = outputString.Replace(strBack, "");
                 }
 
-                strBuilder.AppendLine($"{strPart}");
+                strBuilder.AppendLine($"{outputString}");
             }
 
             txtMain.Text = strBuilder.ToString();
