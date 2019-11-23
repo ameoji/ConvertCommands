@@ -38,7 +38,7 @@ namespace ConvertCommands
 
             foreach (var strPart in arrMain)
             {
-                strBuilder.AppendLine($"{strFront} {strPart} {strBack}");
+                strBuilder.AppendLine($"{strFront}{strPart}{strBack}");
             }
 
             txtConvert.Text = strBuilder.ToString();
